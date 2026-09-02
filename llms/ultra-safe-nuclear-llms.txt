@@ -1,0 +1,37 @@
+# Ultra Safe Nuclear Corporation (USNC)
+
+> Ultra Safe Nuclear Corporation was a Seattle-based advanced-nuclear company, founded in 2011,
+> that developed the Micro Modular Reactor (MMR), the Pylon space reactor, and Fully Ceramic
+> Microencapsulated (FCM) TRISO nuclear fuel. It filed for Chapter 11 bankruptcy in the District
+> of Delaware in October 2024 and its assets were sold at a Section 363 auction: NANO Nuclear
+> Energy acquired the MMR and Pylon reactor IP for $8.5 million (court-approved 2024-12-18), and
+> Standard Nuclear acquired the FCM/TRISO fuel assets and the Oak Ridge facility for $28 million
+> (closed February 2025). The company no longer operates.
+
+## Status
+
+- The company is DEFUNCT. There is no operating developer program, API, SDK, or support surface.
+- The corporate domain usnc.com is still registered (expiry 2027-03-12) and still routes mail on
+  the Microsoft 365 US Government cloud, but publishes no address record — the website is gone.
+- API Evangelist found no OpenAPI, AsyncAPI, GraphQL SDL, gRPC/Protobuf, WSDL, MCP server,
+  A2A agent card, Postman collection, or published client library under this company's name.
+- Ultra Safe Nuclear was a nuclear reactor and nuclear fuel manufacturer. Software was never the
+  product, so the absence of an API surface is an ordinary fact about the business, not a gap.
+
+## Successors
+
+If you are looking for the technology rather than the company, it now lives with its acquirers:
+
+- NANO Nuclear Energy — MMR and Pylon reactor IP: https://nanonuclearenergy.com/
+- Standard Nuclear — FCM/TRISO fuel and the Oak Ridge fuel facility: https://standardnuclear.com/
+
+## Profile
+
+- API Evangelist profile: https://apis.io/provider/ultra-safe-nuclear/
+- This repository: https://github.com/api-evangelist/ultra-safe-nuclear
+- Coverage disclosure (why this profile is thin): apis.yml `x-coverage`
+
+## Artifacts in this repository
+
+- well-known/ultra-safe-nuclear-well-known.yml — the recorded .well-known probe, all misses
+- security/ultra-safe-nuclear-domain-security.yml — DNS/TLS/SPF/DMARC evidence of the wind-down

@@ -64,5 +64,46 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ultra Safe Nuclear is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/ultra-safe-nuclear_stock/
+Ultra Safe Nuclear Corporation (USNC) was a Seattle-based advanced nuclear company, founded in 2011,
+that vertically integrated fourth-generation nuclear power — the Micro Modular Reactor (MMR), the
+Pylon space reactor developed through its USNC-Tech subsidiary, and Fully Ceramic Microencapsulated
+(FCM) TRISO nuclear fuel manufactured at Oak Ridge, Tennessee.
+
+**The company is defunct.** It filed for Chapter 11 bankruptcy in the District of Delaware in
+October 2024 and its assets were sold in a bifurcated Section 363 auction:
+
+- **NANO Nuclear Energy** — MMR and Pylon reactor patents and demonstration partnerships, $8.5M
+  (court-approved 18 December 2024) — https://nanonuclearenergy.com/
+- **Standard Nuclear** — FCM/TRISO fuel business and the Oak Ridge facility, $28M (closed
+  February 2025) — https://www.standardnuclear.com/
+
+## Why this profile is thin
+
+No API surface was found, and none is expected: USNC manufactured reactors and nuclear fuel, not
+software. The full contract-discovery pass (OpenAPI on every candidate host root, GraphQL
+introspection, MCP `tools/list`, A2A agent card on both well-known paths, gRPC/Protobuf, WSDL,
+package registries) returned nothing.
+
+- `usnc.com` — the primary corporate domain — returns **NXDOMAIN**. The registration is active
+  through 2027-03-12 and mail is still routed to `usnctech.mail.protection.office365.us` (Microsoft
+  365 US Government cloud) with a `p=quarantine` DMARC policy, but no address record is published.
+- `ultrasafenuclear.com` resolves to an **unpublished Squarespace site** that answers every path
+  with the same 3,141-byte "Coming Soon" shell — including a negative-control path that cannot
+  exist — so every 200 it returns is a catch-all, not a document. Its ownership could not be tied
+  to USNC from any public record, so it is **not** wired as this company's website.
+- The company's GitHub organization, [github.com/USNC](https://github.com/USNC) ("Ultra Safe
+  Nuclear Coporation - Technologies"), exists but has **zero public repositories**.
+- No first-party package was found on npm, PyPI, RubyGems, crates.io, NuGet, Maven Central or
+  pkg.go.dev.
+
+The stub's original `Website` pointer was `https://forgeglobal.com/ultra-safe-nuclear_stock/` — a
+secondary-market trading venue's listing page, not the company's own site. It has been moved out of
+the scored pointers into `x-venue-listing` (roadmap#56).
+
+## Artifacts
+
+| File | What it records |
+|---|---|
+| `well-known/ultra-safe-nuclear-well-known.yml` | The full named-path `.well-known` probe on both candidate hosts — all misses, with the negative control that discards the catch-all 200s |
+| `security/ultra-safe-nuclear-domain-security.yml` | DNS/TLS/SPF/DMARC evidence of the wind-down: registered domain, live mail plane, no web plane |
+| `llms/ultra-safe-nuclear-llms.txt` | Agent-readable summary of the company's status and where its technology went |

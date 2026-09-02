@@ -1,0 +1,119 @@
+generated: '2026-09-01'
+method: probed
+source: Direct HTTP probes of the two domains associated with Ultra Safe Nuclear Corporation
+note: >-
+  No document was retrieved. The company's primary corporate domain, usnc.com, no longer
+  resolves (NXDOMAIN — the registration is active through 2027 and mail is still routed,
+  but no A record is published), so no HTTP probe could be issued against it at all.
+  The only reachable candidate domain, ultrasafenuclear.com, is an UNPUBLISHED Squarespace
+  site that answers every path with the same 3,141-byte "Coming Soon" shell — including the
+  negative-control path that cannot exist — so every 200 below is a catch-all, not a document.
+  Emitting a WellKnown or SecurityTxt pointer from these probes would credit the provider with
+  a discovery surface it does not serve.
+hit_count: 0
+soft_404_control: failed
+path_echo_control: not-applicable
+hosts:
+  - host: https://usnc.com
+    resolves: false
+    dns:
+      a_records: []
+      ns: [ns27.domaincontrol.com, ns28.domaincontrol.com]
+      mx: ['0 usnctech.mail.protection.office365.us']
+      note: >-
+        Registered and mail-routed (Microsoft 365 US Government cloud) but publishing no
+        address record; the web presence is gone.
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        file: null
+        note: DNS resolution failed (NXDOMAIN) — no request was issued
+      - path: /.well-known/openid-configuration
+        status: 0
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 0
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 0
+        file: null
+      - path: /.well-known/api-catalog
+        status: 0
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 0
+        file: null
+      - path: /.well-known/ucp.json
+        status: 0
+        file: null
+      - path: /.well-known/acp.json
+        status: 0
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 0
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 0
+        file: null
+      - path: /.well-known/agent.json
+        status: 0
+        file: null
+  - host: https://ultrasafenuclear.com
+    resolves: true
+    catch_all: true
+    ownership: unverified
+    ownership_note: >-
+      Domain created 2022-03-30, registrant redacted, Google Domains nameservers, Squarespace
+      origin. It could not be tied to Ultra Safe Nuclear Corporation from any public record,
+      so it is recorded as a probed candidate host only and is NOT wired as the company Website.
+    documents:
+      - path: /.well-known/security.txt
+        status: 401
+        file: null
+        note: Squarespace "Private Site" interstitial — the site is unpublished/password-gated
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        note: 3141-byte "Coming Soon" HTML shell, identical to every other path — not a document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        note: catch-all HTML shell
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: null
+        note: catch-all HTML shell
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        note: catch-all HTML shell
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        note: catch-all HTML shell
+      - path: /.well-known/ucp.json
+        status: 200
+        file: null
+        note: catch-all HTML shell
+      - path: /.well-known/acp.json
+        status: 200
+        file: null
+        note: catch-all HTML shell
+      - path: /.well-known/aauth-resource.json
+        status: 200
+        file: null
+        note: catch-all HTML shell; no issuer/jwks_uri
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        note: catch-all HTML shell; body is not a JSON object — rejected per the A2A recipe
+      - path: /.well-known/agent.json
+        status: 200
+        file: null
+        note: catch-all HTML shell; rejected
+      - path: /.well-known/ultra-safe-nuclear-negative-control-7f3ab91c.json
+        status: 200
+        file: null
+        note: >-
+          NEGATIVE CONTROL — this path cannot exist and still returned the same 200/3141 bytes.
+          Every hit on this host is therefore discarded.

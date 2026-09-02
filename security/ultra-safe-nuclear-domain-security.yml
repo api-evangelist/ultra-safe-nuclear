@@ -1,0 +1,54 @@
+generated: '2026-09-01'
+method: probed
+source: dig (8.8.8.8) + TLS handshake + HTTP HEAD, 2026-09-01
+note: >-
+  Probed the company's primary corporate domain (usnc.com) and the one reachable
+  name-adjacent domain (ultrasafenuclear.com, ownership unverified). usnc.com publishes no
+  address record, so there is no host to test for TLS/HSTS; its mail plane is still
+  configured on the Microsoft 365 US Government cloud with a quarantine DMARC policy, which
+  is the clearest single signal that the entity was wound down rather than migrated.
+hosts:
+  - host: usnc.com
+    https: false
+    reachable: false
+    reason: NXDOMAIN — no A/AAAA record published
+    tls_version: null
+    hsts: null
+  - host: ultrasafenuclear.com
+    https: true
+    reachable: true
+    http_status: 200
+    server: Squarespace
+    tls_version: TLSv1.3
+    cert_subject: CN=ultrasafenuclear.com
+    cert_issuer: "Let's Encrypt YR2"
+    cert_not_after: '2026-11-19'
+    hsts: true
+    hsts_max_age: 15552000
+    ownership: unverified
+domains:
+  - domain: usnc.com
+    registrar: GoDaddy Online Services Cayman Islands Ltd.
+    registry_expiry: '2027-03-12'
+    nameservers: [ns27.domaincontrol.com, ns28.domaincontrol.com]
+    dnssec: false
+    caa: []
+    spf: true
+    spf_record: 'v=spf1 include:spf.protection.office365.us -all'
+    dmarc: true
+    dmarc_policy: quarantine
+    dmarc_record: 'v=DMARC1; p=quarantine; pct=100; rua=mailto:dmarc@usnc.com; ruf=mailto:dmarc@usnc.com; fo=1'
+    mx: ['usnctech.mail.protection.office365.us']
+    web_presence: false
+  - domain: ultrasafenuclear.com
+    registrar: null
+    created: '2022-03-30'
+    registry_expiry: '2032-03-30'
+    nameservers: [ns-cloud-b1.googledomains.com, ns-cloud-b2.googledomains.com, ns-cloud-b3.googledomains.com, ns-cloud-b4.googledomains.com]
+    dnssec: true
+    caa: []
+    spf: false
+    dmarc: false
+    mx: []
+    web_presence: placeholder
+    ownership: unverified
