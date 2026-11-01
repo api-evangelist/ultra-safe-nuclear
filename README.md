@@ -64,46 +64,44 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ultra Safe Nuclear Corporation (USNC) was a Seattle-based advanced nuclear company, founded in 2011,
-that vertically integrated fourth-generation nuclear power — the Micro Modular Reactor (MMR), the
-Pylon space reactor developed through its USNC-Tech subsidiary, and Fully Ceramic Microencapsulated
-(FCM) TRISO nuclear fuel manufactured at Oak Ridge, Tennessee.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-**The company is defunct.** It filed for Chapter 11 bankruptcy in the District of Delaware in
-October 2024 and its assets were sold in a bifurcated Section 363 auction:
+Ultra Safe Nuclear Corporation (USNC) was a Seattle-based advanced nuclear company, founded in 2011, that vertically integrated fourth-generation nuclear power — the Micro Modular Reactor (MMR), the Pylon space reactor developed through its USNC-Tech subsidiary, and Fully Ceramic Microencapsulated (FCM) TRISO nuclear fuel manufactured at Oak Ridge, Tennessee. It filed for Chapter 11 bankruptcy in the District of Delaware in October 2024 following the death of its principal investor, and its assets were sold in a bifurcated Section 363 auction: NANO Nuclear Energy acquired the MMR and Pylon reactor patents and demonstration partnerships for $8.5 million (court-approved 18 December 2024), and Standard Nuclear acquired the FCM/TRISO fuel business and the Oak Ridge facility for $28 million (closed February 2025). The company no longer operates. Its primary domain, usnc.com, is still registered and still routes mail on the Microsoft 365 US Government cloud but publishes no address record, so the corporate web presence is gone. As a reactor and nuclear-fuel manufacturer it never ran a developer program, and no public API, specification, SDK, or agent surface was found under its name.
 
-- **NANO Nuclear Energy** — MMR and Pylon reactor patents and demonstration partnerships, $8.5M
-  (court-approved 18 December 2024) — https://nanonuclearenergy.com/
-- **Standard Nuclear** — FCM/TRISO fuel business and the Oak Ridge facility, $28M (closed
-  February 2025) — https://www.standardnuclear.com/
+**Areas:** Company · Energy · Nuclear · Advanced Reactors · Small Modular Reactor · Nuclear Fuel · Space · Manufacturing · Defunct
 
-## Why this profile is thin
+## Ultra Safe Nuclear on APIs.io (historical record)
 
-No API surface was found, and none is expected: USNC manufactured reactors and nuclear fuel, not
-software. The full contract-discovery pass (OpenAPI on every candidate host root, GraphQL
-introspection, MCP `tools/list`, A2A agent card on both well-known paths, gRPC/Protobuf, WSDL,
-package registries) returned nothing.
+Everything profiled for Ultra Safe Nuclear is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ultra-safe-nuclear/](https://apis.io/providers/ultra-safe-nuclear/)** — or go straight to one of the APIs or properties below.
 
-- `usnc.com` — the primary corporate domain — returns **NXDOMAIN**. The registration is active
-  through 2027-03-12 and mail is still routed to `usnctech.mail.protection.office365.us` (Microsoft
-  365 US Government cloud) with a `p=quarantine` DMARC policy, but no address record is published.
-- `ultrasafenuclear.com` resolves to an **unpublished Squarespace site** that answers every path
-  with the same 3,141-byte "Coming Soon" shell — including a negative-control path that cannot
-  exist — so every 200 it returns is a catch-all, not a document. Its ownership could not be tied
-  to USNC from any public record, so it is **not** wired as this company's website.
-- The company's GitHub organization, [github.com/USNC](https://github.com/USNC) ("Ultra Safe
-  Nuclear Coporation - Technologies"), exists but has **zero public repositories**.
-- No first-party package was found on npm, PyPI, RubyGems, crates.io, NuGet, Maven Central or
-  pkg.go.dev.
+### Published properties
 
-The stub's original `Website` pointer was `https://forgeglobal.com/ultra-safe-nuclear_stock/` — a
-secondary-market trading venue's listing page, not the company's own site. It has been moved out of
-the scored pointers into `x-venue-listing` (roadmap#56).
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Artifacts
+#### Security (1)
 
-| File | What it records |
-|---|---|
-| `well-known/ultra-safe-nuclear-well-known.yml` | The full named-path `.well-known` probe on both candidate hosts — all misses, with the negative control that discards the catch-all 200s |
-| `security/ultra-safe-nuclear-domain-security.yml` | DNS/TLS/SPF/DMARC evidence of the wind-down: registered domain, live mail plane, no web plane |
-| `llms/ultra-safe-nuclear-llms.txt` | Agent-readable summary of the company's status and where its technology went |
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ultra Safe Nuclear Domain Security](https://apis.io/security/ultra-safe-nuclear/ultra-safe-nuclear-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [GitHub](https://github.com/USNC)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ultra Safe Nuclear: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ultra-safe-nuclear/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
